@@ -1,0 +1,64 @@
+<% layout('layouts/boilerplate.ejs') %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h1 class="text-center">Edit <%= agency.name %> Client Here</h1>
+            <form method="post" action="/agency/<%= agency._id %>/clients/<%= clients._id %>?_method=PUT"
+                class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Client Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Client"
+                        value="<%= clients.name %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Client Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email"
+                        value="<%= clients.email %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="number" class="form-label">Client Phone Number</label>
+                    <input type="number" class="form-control" id="number" name="phone_number" placeholder="Enter Number"
+                        value="<%= clients.phone_number %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="clientImage" class="form-label">Choose image</label>
+                        <input class="form-control" type="file" id="clientImage" name="clientImage">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="total_bill">Total Bill</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="bill-label">&#8377;</span>
+                        <input type="text" class="form-control" id="total_bill" placeholder="0.00"
+                            aria-label="total_bill" aria-describedby="bill-label" name="total_bill"
+                            value="<%= clients.total_bill %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <img src="<%=clients.clientImages.url%>" class="img-thumbnail" alt="">
+                    <div class="form-check-inline">
+                        <input type="checkbox" id="clientImages" name="deleteImages" value="<%=clients.clientImages.filename%>" checked>
+                    </div>
+                    <label for="clientImages">Delete?</label>
+                </div>
+                <div class="d-grid gap-2 mb-3">
+                    <button class="btn btn-secondary">Update Client</button>
+                </div>
+                <div class="d-grid gap-2 mb-3 text-center">
+                    <a href="/agency/<%= agency._id %>">Go Back</a>
+                </div>
+            </form>
+        </div>
+    </div>

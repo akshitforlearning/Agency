@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate.ejs') %>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Add Agency</h1>
+            <form method="post" action="/agency" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Agency Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Agency" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="add1" class="form-label">Address1</label>
+                            <input type="text" class="form-control" id="add1" name="add1" placeholder="Address Line 1"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="add2" class="form-label">Address2</label>
+                            <input type="text" class="form-control" id="add2" name="add2" placeholder="Address Line 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="state" class="form-label">State</label>
+                            <input type="text" class="form-control" id="state" name="state" placeholder="Enter State"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="Enter City"
+                                required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="number" class="form-label">Agency Phone Number</label>
+                    <input type="number" class="form-control" id="number" name="phone_number" placeholder="Enter Number"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Choose image(s)</label>
+                        <input class="form-control" type="file" id="image" name="image" multiple required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Agency Description</label>
+                    <textarea type="text" class="form-control" id="description" name="description"
+                        placeholder="Enter Description" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn btn-success">Add Agency</button>
+                    </div>
+                    <div class="d-grid gap-2 mb-3 text-center">
+                        <a href="/agency">Back to All Agencies</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

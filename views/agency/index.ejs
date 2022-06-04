@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate.ejs') %>
+    <h1 class="mb-5">Agency</h1>
+    <% for(let agent of agency){ %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="<%= agent.images[0].url %>" class="card-img-top" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= agent.name %>
+                        </h5>
+                        <p class="card-text">
+                            <%= agent.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= agent.city %> , <%= agent.state %>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/agency/<%= agent._id %>">
+                            View <%= agent.name %>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
