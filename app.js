@@ -17,7 +17,6 @@ const passportLocal = require('passport-local');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require("helmet");
 const User = require('./models/users');
-const port = 3000;
 
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
@@ -141,6 +140,8 @@ app.use((err, req, res, next) => {
     }
     res.status(status).render('errorPage/error.ejs', { err });
 });
+
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Connected to the port: ${port}`);
